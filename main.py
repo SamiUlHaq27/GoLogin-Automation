@@ -6,11 +6,15 @@ version = "120.0.6099.110"
 
 
 pages = [
-    "http://127.0.0.1:5500/page1.html",
-    "http://127.0.0.1:5500/page2.html",
-    "http://127.0.0.1:5500/page3.html",
-    "http://127.0.0.1:5500/page4.html",
-    "http://127.0.0.1:5500/page5.html"
+    # "http://127.0.0.1:5500/page1.html",
+    # "http://127.0.0.1:5500/page2.html",
+    # "http://127.0.0.1:5500/page3.html",
+    # "http://127.0.0.1:5500/page4.html",
+    # "http://127.0.0.1:5500/page5.html"
+    "https://en.wikipedia.org/wiki/Main_Page",
+    "https://en.wikipedia.org/wiki/Starfish",
+    "https://en.wikipedia.org/wiki/Echinasteridae",
+    "https://en.wikipedia.org/wiki/Zostera"
 ]
 
 brw = Browser(token, profile_id)
@@ -18,5 +22,6 @@ brw.pages = pages
 brw.visitAll(refresh_first_tab=True)
 for i in range(0,5):
     brw.visitAgain()
+
 
 brw.close()

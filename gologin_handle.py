@@ -29,20 +29,20 @@ class AutoChrome:
         chrome_options.add_experimental_option("debuggerAddress", debugger_address)
         self.driver = webdriver.Chrome(options=chrome_options)
         
-    def scrollDS(self):
+    def scrollDown(self):
         """Scroll down slowly
         """
         
         last_height = self.driver.execute_script("return document.body.scrollHeight")
-        sections = int(last_height / 10)
+        sections = int(last_height / 5)
         remaining = last_height%10
         for i in range(0,sections):
             self.driver.execute_script("window.scrollBy(0,10)")
-            sleep(0.05)
+            sleep(0.03)
 
         self.driver.execute_script(f"window.scrollBy(0,{remaining})")
     
-    def scrollUS(self):
+    def scrollUp(self):
         """Scroll Up
         """
         
@@ -53,6 +53,8 @@ class AutoChrome:
         self.driver.implicitly_wait(10)
         self.driver.get(url)        
         self.window_handles.append(self.driver.current_window_handle)
+        # Print statement here
+        print(self.driver.title, " loaded")
         
     def newTab(self):
         self.driver.switch_to.new_window('tab')

@@ -16,20 +16,23 @@ class Browser:
         """Visits all pages in new tab
         """
         n = len(self.pages)
-        
-        for i in range(0, n):
-            self.win.get(self.pages[i])
+        self.win.get(self.pages[0])
+        for i in range(0, n-1):
+            self.win.newTab()
+            self.win.get(self.pages[i+1])
             
-            if refresh_first_tab and i==n-1:
-                self.win.switch(0)
-                self.win.refresh()
-                self.win.switch(n-1)
                         
-            if i+1<n:
-                self.win.newTab()
-                self.
-            self.win.scrollDS()
-            self.win.scrollUS()
+            self.win.switch(i)
+            self.win.scrollDown()
+            self.win.scrollUp()
+            
+        if refresh_first_tab:
+            self.win.switch(0)
+            self.win.refresh()
+            
+        self.win.switch(i+1)
+        self.win.scrollDown()
+        self.win.scrollUp()
         
 
     def visitAgain(self):
@@ -46,8 +49,8 @@ class Browser:
                 self.win.refresh()
                 
             self.win.switch(i)
-            self.win.scrollDS()
-            self.win.scrollUS()
+            self.win.scrollDown()
+            self.win.scrollUp()
     
     def close(self):
         self.win.close()
