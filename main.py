@@ -4,12 +4,20 @@ token = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI2NWQxOTg4YTk5ZjliNTcxOG
 profile_id = '65d1a16c8d3b1a11dbe529b6'
 version = "120.0.6099.110"
 
+page1 = "http://127.0.0.1:5500/page1.html"
+page2 = "http://127.0.0.1:5500/page2.html"
+page3 = "http://127.0.0.1:5500/page3.html"
+page4 = "http://127.0.0.1:5500/page4.html"
+page5 = "http://127.0.0.1:5500/page5.html"
 
 web1 = AutoChrome(token, profile_id)
 web1.createDriver(version)
-web1.get("https://github.com/SergeyPirogov/webdriver_manager")
+web1.get(page1)
 web1.scrollDS()
-web1.get("https://en.wikipedia.org/wiki/Portal:Current_events")
+
+web1.newTab()
+
+web1.get(page2)
 web1.scrollDS()
 
 

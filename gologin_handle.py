@@ -29,8 +29,6 @@ class AutoChrome:
         chrome_options.add_experimental_option("debuggerAddress", debugger_address)
         self.driver = webdriver.Chrome(options=chrome_options)
         
-        self.window_handles.append(self.driver.current_window_handle)
-
     def scrollDS(self):
         """Scroll down slowly
         """
@@ -46,7 +44,11 @@ class AutoChrome:
     
     def get(self, url : str):
         self.driver.implicitly_wait(10)
-        self.driver.get(url)
+        self.driver.get(url)        
+        self.window_handles.append(self.driver.current_window_handle)
+        
+    def newTab(self):
+        self.driver.switch_to('tab')
     
     def close(self):
         self.driver.close()
