@@ -42,13 +42,30 @@ class AutoChrome:
 
         self.driver.execute_script(f"window.scrollBy(0,{remaining})")
     
+    def scrollUS(self):
+        """Scroll Up
+        """
+        
+        last_height = self.driver.execute_script("return document.body.scrollHeight")
+        self.driver.execute_script(f"window.scrollTo({last_height},0)")
+    
     def get(self, url : str):
         self.driver.implicitly_wait(10)
         self.driver.get(url)        
         self.window_handles.append(self.driver.current_window_handle)
         
     def newTab(self):
-        self.driver.switch_to('tab')
+        self.driver.switch_to.new_window('tab')
+    
+    def refresh(self):
+        # Print statement here
+        print(self.driver.title," refreshed")
+        self.driver.refresh()
+    
+    def switch(self, ind:int):
+        win_handle = self.window_handles[ind]
+        self.driver.switch_to.window(win_handle)
+    
     
     def close(self):
         self.driver.close()
