@@ -47,7 +47,14 @@ class AutoChrome:
         """
         
         last_height = self.driver.execute_script("return document.body.scrollHeight")
-        self.driver.execute_script(f"window.scrollTo({last_height},0)")
+        sections = int(last_height / 5)
+        remaining = last_height%10
+        for i in range(0,sections):
+            self.driver.execute_script(f"window.scrollTo({last_height},{last_height-10})")
+            last_height -= 10
+            sleep(0.03)
+
+        self.driver.execute_script(f"window.scrollBy({last_height},0)")
     
     def get(self, url : str):
         self.driver.implicitly_wait(10)
@@ -75,32 +82,3 @@ class AutoChrome:
         self.gl.stop()
         
     
-    
-def scrollGo():
-
-    gl = GoLogin({
-        'token': 'yJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI2NWQxOeTg4YTk5ZjliNTcxOGY1YWY5YTAiLCJ0eXBlIjoiZGV2Iiwiand0aWQiOiI2NWQxYTE4Y2NlZTc3NjFhN2U1NzNjZWEifQ.ZI2tmmzQ4kjYCOz4gUjEbo0Wuhy9uLAVHaPMdRKZLKI',
-        'profile_id': '65d1a16c8d3b1a11dbe529b6',
-    })
-
-    debugger_address = gl.start()
-    chrome_options = Options()
-    chrome_options.browser_version = "120.0.6099.110"
-    chrome_options.add_experimental_option("debuggerAddress", debugger_address)
-
-    driver = webdriver.Chrome(options=chrome_options)
-    driver.implicitly_wait(10)
-    driver.get("http://www.python.org")
-    
-    last_height = driver.execute_script("return document.body.scrollHeight")
-    sections = int(last_height / 10)
-    remaining = last_height%10
-    for i in range(0,sections):
-        driver.execute_script("window.scrollBy(0,10)")
-        sleep(0.05)
-
-    driver.execute_script(f"window.scrollBy(0,{remaining})")
-    
-    driver.close()
-    sleep(3)
-    gl.stop()

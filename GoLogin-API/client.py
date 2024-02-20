@@ -1,7 +1,7 @@
 import requests
 import json
 
-token = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI2NWQxOTg4YTk5ZjliNTcxOGY1YWY5YTAiLCJ0eXBlIjoiZGV2Iiwiand0aWQiOiI2NWQxYTE4Y2NlZTc3NjFhN2U1NzNjZWEifQ.ZI2tmmzQ4kjYCOz4gUjEbo0Wuhy9uLAVHaPMdRKZLKI"
+token = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI2NWNjY2YxNzcxYTQyZjVlMjUxYzJmNDkiLCJ0eXBlIjoiZGV2Iiwiand0aWQiOiI2NWQwYTc0MjhkM2IxYTExZGI5ODFkNTEifQ.DDuBWRGmOuZOIx4YTzyHBtf6WdQE2dWjffLM-Ca1Lks"
 
 headers = {
     "Authorization":"Bearer "+token,
@@ -14,5 +14,6 @@ response = requests.get(
     )
 
 res_json = response.json()
+print(json.dumps(res_json, indent=2))
 with open("profiles.json", 'w') as f:
     json.dump(res_json, f, indent=2)
