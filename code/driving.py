@@ -1,5 +1,6 @@
 from auto import Browser
 import json
+from time import sleep
 
 # ---------------------- Laptop
 # token = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI2NWNjY2YxNzcxYTQyZjVlMjUxYzJmNDkiLCJ0eXBlIjoiZGV2Iiwiand0aWQiOiI2NWQwYTc0MjhkM2IxYTExZGI5ODFkNTEifQ.DDuBWRGmOuZOIx4YTzyHBtf6WdQE2dWjffLM-Ca1Lks"
@@ -24,6 +25,8 @@ class Main:
     
     def run(self, token, profile, pages):
         self.brw = Browser(token, profile)
+        self.brw.win.get("https://whoer.net/")
+        sleep(10)
         self.brw.pages = pages
         self.brw.visitAll(refresh_first_tab=True)
         while(self.flag):
