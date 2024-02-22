@@ -1,9 +1,9 @@
 {
   "profiles": [
     {
-      "name": "profile 12",
+      "name": "profile 1",
       "role": "owner",
-      "id": "65d306c6acd907ce5d4a2adb",
+      "id": "65d6d64c3594c6e54244d6db",
       "notes": "",
       "browserType": "chrome",
       "lockEnabled": false,
@@ -13,8 +13,8 @@
       },
       "navigator": {
         "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.6099.110 Safari/537.36",
-        "resolution": "1360x768",
-        "language": "en-US,en;q=0.9"
+        "resolution": "1440x900",
+        "language": "en-US,en;q=0.8"
       },
       "geolocation": {
         "mode": "block",
@@ -29,12 +29,12 @@
       "runDisabledReason": null,
       "os": "win",
       "proxy": {
-        "id": "65d306c6acd907ce5d4a2ad9",
+        "id": "65d6d64cdbce984c497f26be",
         "mode": "http",
-        "host": "geo-dc.floppydata.com",
-        "port": 10080,
-        "username": "tZG1fkRNKyeuLDfs",
-        "password": "LVsX8UNgBxGg2UOD",
+        "host": "108.181.132.116",
+        "port": 40955,
+        "username": "123qwe",
+        "password": "dsaczx",
         "autoProxyRegion": "us",
         "torProxyRegion": "us"
       },
@@ -42,76 +42,13 @@
       "proxyRegion": "",
       "folders": [],
       "sharedEmails": [],
-      "createdAt": "2024-02-19T07:44:06.946Z",
-      "updatedAt": "2024-02-19T07:44:06.946Z",
-      "chromeExtensions": [],
-      "userChromeExtensions": [],
-      "tags": [],
-      "permissions": {
-        "transferProfile": false,
-        "transferToMyWorkspace": false,
-        "shareProfile": true,
-        "manageFolders": true,
-        "editProfile": true,
-        "deleteProfile": true,
-        "cloneProfile": true,
-        "exportProfile": false,
-        "updateUA": true,
-        "addVpnUfoProxy": true,
-        "runProfile": true,
-        "viewProfile": true,
-        "addProfileTag": true,
-        "removeProfileTag": true
-      },
-      "proxyEnabled": true,
-      "isBookmarksSynced": true,
-      "autoLang": true
-    },
-    {
-      "name": "profile 11",
-      "role": "owner",
-      "id": "65d2f8693f4ddf9411abffcb",
-      "notes": "",
-      "browserType": "chrome",
-      "lockEnabled": false,
-      "timezone": {
-        "fillBasedOnIp": true,
-        "timezone": ""
-      },
-      "navigator": {
-        "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.6099.110 Safari/537.36",
-        "resolution": "1024x600",
-        "language": "en-US,en;q=0.9"
-      },
-      "geolocation": {
-        "mode": "block",
-        "enabled": true,
-        "customize": true,
-        "fillBasedOnIp": true,
-        "latitude": 0,
-        "longitude": 0,
-        "accuracy": 10
-      },
-      "canBeRunning": true,
-      "runDisabledReason": null,
-      "os": "win",
-      "proxy": {
-        "id": "65d2f8693f4ddf9411abffc9",
-        "mode": "http",
-        "host": "geo-dc.floppydata.com",
-        "port": 10080,
-        "username": "QnCjLXHCL6GyD3cw",
-        "password": "7ixj6NRx2bcpNZV2",
-        "autoProxyRegion": "us",
-        "torProxyRegion": "us"
-      },
-      "proxyType": "http",
-      "proxyRegion": "",
-      "folders": [],
-      "sharedEmails": [],
-      "createdAt": "2024-02-19T06:42:49.676Z",
-      "updatedAt": "2024-02-19T06:42:49.676Z",
-      "chromeExtensions": [],
+      "createdAt": "2024-02-22T05:06:20.998Z",
+      "updatedAt": "2024-02-22T05:06:20.998Z",
+      "chromeExtensions": [
+        "fjkmabmdepjfammlpliljpnbhleegehm",
+        "bppamachkoflopbagkdoflbgfjflfnfl",
+        "gchcfdihakkhjgfmokemfeembfokkajj"
+      ],
       "userChromeExtensions": [],
       "tags": [],
       "permissions": {
@@ -135,7 +72,7 @@
       "autoLang": true
     }
   ],
-  "allProfilesCount": 2,
+  "allProfilesCount": 1,
   "currentOrbitaMajorV": "120",
   "currentBrowserV": "120.0.6099.110",
   "currentTestBrowserV": "120.0.6099.110",

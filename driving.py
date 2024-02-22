@@ -34,10 +34,12 @@ class Main:
     
        
 if __name__=="__main__":
-    exe = Main()
     
     with open("Data.json",'r') as f:
         data = json.load(f)
-        exe.run(data["token"],data["profile"],data["pages"])
+        print("Profile to be run",data["profile"])
+    
+    exe = Main()
+    exe.run(data["token"],data["profile"],data["pages"])
 
         

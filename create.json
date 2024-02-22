@@ -1,0 +1,5 @@
+{
+  "statusCode": 404,
+  "message": "Cannot GET /browser",
+  "error": "Not Found"
+}
