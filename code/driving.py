@@ -35,7 +35,7 @@ class Main:
        
 if __name__=="__main__":
     
-    with open("Data.json",'r') as f:
+    with open("code/files/Data.json",'r') as f:
         data = json.load(f)
         print("Profile to be run",data["profile"])
     

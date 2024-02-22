@@ -2,9 +2,7 @@ import tkinter as tk
 import tkinter.font as tkFont
 import os
 import json
-import multiprocessing
-# from start import start
-from create_profile import create_profile
+from gologin_handle import create_profile
 
 class Frontend:
     def __init__(self):
@@ -163,7 +161,7 @@ class Frontend:
         try:
             # start(token,profile,pages)
             self.write_data_file()
-            os.system("python driving.py")
+            os.system("python code/driving.py")
             self.start_btn["state"] = "disable"
             self.stop_btn["state"] = "active"
         except Exception as e:
@@ -184,7 +182,7 @@ class Frontend:
             proxy = ""
             port = 0
         
-        with open("Data.json",'w') as f:
+        with open("code/files/Data.json",'w') as f:
             json.dump({
                 "token":token,
                 "profile":profile,
@@ -195,24 +193,19 @@ class Frontend:
         
     def start_new_btn_command(self):
         token = self.token_fld.get("1.0","end-1c")
-        host = self.profile_fld.get("1.0","end-1c")
+        proxy = self.proxy_fld.get("1.0","end-1c")
         port = int(self.port_fld.get("1.0","end-1c"))
         try:
-            pid = create_profile(token, host, port, "Auto1","EeEeEe")
+            pid = create_profile(token, proxy, port, "Auto1","EeEeEe")
             print(pid)
             self.profile_fld.delete("1.0","end-1c")
             self.profile_fld.insert("1.0",pid)
         except Exception as e:
             print("Error: ",e)
-    
-    def update_window(self):
-        with open("log.txt",'r') as f:
-            data = f.read()
-        self.status_lbl["text"] += "\n" + data
         
     def read_data_file(self):
         try:
-            with open("Data.json",'r') as f:
+            with open("code/files/Data.json",'r') as f:
                 data = json.load(f)
             self.token_fld.insert("1.0",data["token"])
             self.profile_fld.insert("1.0",data["profile"])
@@ -241,4 +234,8 @@ class Frontend:
         self.win.destroy()
     
     
+if __name__=="__main__":
+    
+    screen = Frontend()
+    screen.run()
 
